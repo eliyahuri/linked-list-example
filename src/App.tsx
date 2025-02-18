@@ -63,13 +63,104 @@ function App() {
             </div>
           </div>
         </section>
-
         {/* Interactive Demo Section */}
         <section className="mb-8">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
             Interactive Demo
           </h2>
           <LinkedList />
+        </section>
+
+        {/* Linked List Implementation Examples Section */}
+        <section className="mb-8">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">
+            Linked List Implementation Examples
+          </h2>
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* JavaScript Example */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <h3 className="text-lg font-medium mb-2">JavaScript</h3>
+              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
+                <code>{`class Node {
+                            constructor(data) {
+                              this.data = data;
+                              this.next = null;
+                              }
+                              }
+                                          
+                          class LinkedList {
+                            constructor() {
+                              this.head = null;
+                            }
+                          }`}</code>
+              </pre>
+            </div>
+
+            {/* TypeScript Example */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <h3 className="text-lg font-medium mb-2">TypeScript</h3>
+              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
+                <code>{`class Node<T> {
+  data: T;
+  next: Node<T> | null;
+  
+  constructor(data: T) {
+    this.data = data;
+    this.next = null;
+  }
+}`}</code>
+              </pre>
+            </div>
+
+            {/* Python Example */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <h3 className="text-lg font-medium mb-2">Python</h3>
+              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
+                <code>{`class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None`}</code>
+              </pre>
+            </div>
+
+            {/* Java Example */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <h3 className="text-lg font-medium mb-2">Java</h3>
+              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
+                <code>{`public class Node<T> {
+    T data;
+    Node<T> next;
+    
+    public Node(T data) {
+        this.data = data;
+        this.next = null;
+    }
+}`}</code>
+              </pre>
+            </div>
+
+            {/* C# Example */}
+            <div className="bg-white p-4 rounded-lg shadow">
+              <h3 className="text-lg font-medium mb-2">C#</h3>
+              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
+                <code>{`public class Node<T>
+{
+    public T Data { get; set; }
+    public Node<T> Next { get; set; }
+    
+    public Node(T data)
+    {
+        Data = data;
+        Next = null;
+    }
+}`}</code>
+              </pre>
+            </div>
+          </div>
         </section>
       </main>
 
