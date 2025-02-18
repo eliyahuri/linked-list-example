@@ -7,7 +7,7 @@ interface Node {
 
 const LinkedList = () => {
   const [head, setHead] = useState<Node | null>(null);
-  const [inputValue, setInputValue] = useState<number>(0);
+  const [inputValue, setInputValue] = useState<string>("");
   const [isCircular, setIsCircular] = useState<boolean>(false);
 
   const addNode = (value: number) => {
@@ -110,14 +110,14 @@ const LinkedList = () => {
         <input
           type="number"
           value={inputValue}
-          onChange={(e) => setInputValue(Number(e.target.value))}
+          onChange={(e) => setInputValue(e.target.value)}
           className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           placeholder="Enter a number"
         />
         <button
           onClick={() => {
-            addNode(inputValue);
-            setInputValue(0);
+            addNode(Number(inputValue));
+            setInputValue("");
           }}
           className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors duration-200"
         >
