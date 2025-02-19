@@ -168,6 +168,16 @@ class LinkedList:
         <p className="text-sm sm:text-base text-gray-600">
           &copy; {new Date().getFullYear()} Eliyahu Huri - All Rights Reserved
         </p>
+        <p className="text-sm sm:text-base text-gray-600">
+          <a
+            href="https://github.com/eliyahuri/linked-list-example"
+            className="text-blue-600 underline"
+          >
+            {" "}
+            Please star me on GitHub
+          </a>
+          !
+        </p>
       </footer>
     </div>
   );
