@@ -74,9 +74,9 @@ const LinkedList = () => {
       elements.push(
         <div
           key={`node-${currentNode.value}-${elements.length}`}
-          className="node flex items-center space-x-2 bg-white p-3 rounded-lg shadow-md"
+          className="node bg-gray-800 p-3 rounded-lg shadow-md"
         >
-          <span className="text-lg font-semibold text-gray-800">
+          <span className="text-lg font-semibold text-gray-200">
             {currentNode.value}
           </span>
           <button
@@ -86,10 +86,10 @@ const LinkedList = () => {
             Remove
           </button>
           {currentNode.next && (!isCircular || currentNode.next !== head) && (
-            <span className="arrow text-lg text-blue-500">→</span>
+            <span className="arrow text-lg text-blue-400">→</span>
           )}
           {isCircular && currentNode.next === head && (
-            <span className="arrow text-lg text-green-500">↺</span>
+            <span className="arrow text-lg text-green-400">↺</span>
           )}
         </div>
       );
@@ -102,8 +102,8 @@ const LinkedList = () => {
   };
 
   return (
-    <div className="linked-list p-6 max-w-4xl mx-auto bg-gray-50 rounded-xl shadow-lg">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">
+    <div className="linked-list p-6 max-w-4xl bg-gray-900 rounded-xl shadow-lg">
+      <h1 className="text-3xl font-bold mb-6 text-gray-200">
         Linked List Visualization
       </h1>
       <div className="input-container flex flex-wrap gap-4 mb-6">
@@ -111,7 +111,7 @@ const LinkedList = () => {
           type="number"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          className="border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-gray-600 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-gray-200"
           placeholder="Enter a number"
         />
         <button
@@ -130,10 +130,10 @@ const LinkedList = () => {
             onChange={(e) => setIsCircular(e.target.checked)}
             className="form-checkbox h-5 w-5 text-blue-500"
           />
-          <span className="text-gray-700">Circular List</span>
+          <span className="text-gray-400">Circular List</span>
         </label>
       </div>
-      <div className="list-container flex flex-wrap gap-4 items-center">
+      <div className="list-container flex flex-wrap gap-4">
         {renderList(head)}
       </div>
     </div>

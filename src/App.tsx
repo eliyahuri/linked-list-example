@@ -1,10 +1,13 @@
 import LinkedList from "./LinkedList";
 import { Analytics } from "@vercel/analytics/react";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 function App() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-r from-gray-800 to-gray-900 text-white">
       <Analytics />
-      <header className="text-center py-6 bg-blue-600 text-white">
+      <header className="text-center py-6 bg-gray-800 text-white">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold">
           Understanding Linked Lists
         </h1>
@@ -36,7 +39,7 @@ function App() {
 
           <div className="grid md:grid-cols-3 gap-6">
             {/* Single Linked List */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">Single Linked List</h3>
               <p>
                 Each node points to the next node in the sequence. The last node
@@ -45,7 +48,7 @@ function App() {
             </div>
 
             {/* Doubly Linked List */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">Doubly Linked List</h3>
               <p>
                 Each node has two references: one to the next node and one to
@@ -54,7 +57,7 @@ function App() {
             </div>
 
             {/* Circular Linked List */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">Circular Linked List</h3>
               <p>
                 The last node points back to the first node, creating a circular
@@ -78,29 +81,29 @@ function App() {
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             {/* JavaScript Example */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">JavaScript</h3>
-              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
-                <code>{`class Node {
-                            constructor(data) {
-                              this.data = data;
-                              this.next = null;
-                              }
-                              }
-                                          
-                          class LinkedList {
-                            constructor() {
-                              this.head = null;
-                            }
-                          }`}</code>
-              </pre>
+              <SyntaxHighlighter language="javascript" style={vscDarkPlus}>
+                {`class Node {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
+}`}
+              </SyntaxHighlighter>
             </div>
 
             {/* TypeScript Example */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">TypeScript</h3>
-              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
-                <code>{`class Node<T> {
+              <SyntaxHighlighter language="typescript" style={vscDarkPlus}>
+                {`class Node<T> {
   data: T;
   next: Node<T> | null;
   
@@ -108,30 +111,30 @@ function App() {
     this.data = data;
     this.next = null;
   }
-}`}</code>
-              </pre>
+}`}
+              </SyntaxHighlighter>
             </div>
 
             {/* Python Example */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">Python</h3>
-              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
-                <code>{`class Node:
+              <SyntaxHighlighter language="python" style={vscDarkPlus}>
+                {`class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
 
 class LinkedList:
     def __init__(self):
-        self.head = None`}</code>
-              </pre>
+        self.head = None`}
+              </SyntaxHighlighter>
             </div>
 
             {/* Java Example */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">Java</h3>
-              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
-                <code>{`public class Node<T> {
+              <SyntaxHighlighter language="java" style={vscDarkPlus}>
+                {`public class Node<T> {
     T data;
     Node<T> next;
     
@@ -139,15 +142,15 @@ class LinkedList:
         this.data = data;
         this.next = null;
     }
-}`}</code>
-              </pre>
+}`}
+              </SyntaxHighlighter>
             </div>
 
             {/* C# Example */}
-            <div className="bg-white p-4 rounded-lg shadow">
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
               <h3 className="text-lg font-medium mb-2">C#</h3>
-              <pre className="bg-gray-50 p-4 rounded overflow-x-auto text-sm">
-                <code>{`public class Node<T>
+              <SyntaxHighlighter language="csharp" style={vscDarkPlus}>
+                {`public class Node<T>
 {
     public T Data { get; set; }
     public Node<T> Next { get; set; }
@@ -157,21 +160,38 @@ class LinkedList:
         Data = data;
         Next = null;
     }
-}`}</code>
-              </pre>
+}`}
+              </SyntaxHighlighter>
+            </div>
+
+            {/* Rust Example */}
+            <div className="bg-gray-700 p-4 rounded-lg shadow">
+              <h3 className="text-lg font-medium mb-2">Rust</h3>
+              <SyntaxHighlighter language="rust" style={vscDarkPlus}>
+                {`struct Node<T> {
+    data: T,
+    next: Option<Box<Node<T>>>,
+}
+
+impl<T> Node<T> {
+    fn new(data: T) -> Self {
+        Node { data, next: None }
+    }
+}`}
+              </SyntaxHighlighter>
             </div>
           </div>
         </section>
       </main>
 
-      <footer className="text-center py-4 bg-gray-100">
-        <p className="text-sm sm:text-base text-gray-600">
+      <footer className="text-center py-4 bg-gray-800">
+        <p className="text-sm sm:text-base text-gray-400">
           &copy; {new Date().getFullYear()} Eliyahu Huri - All Rights Reserved
         </p>
-        <p className="text-sm sm:text-base text-gray-600">
+        <p className="text-sm sm:text-base text-gray-400">
           <a
             href="https://github.com/eliyahuri/linked-list-example"
-            className="text-blue-600 underline"
+            className="text-blue-400 underline"
           >
             {" "}
             Please star me on GitHub
